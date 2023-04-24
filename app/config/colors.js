@@ -6,6 +6,7 @@ export default {
   gray2: "#6e6969",
   ultraLightGray: "#f8f4f4",
   lightGray: "#D3D3D3",
-  gold: "#ffd700"
+  gold: "#ffd700",
+  dnager: '#ff5252'
 
 };

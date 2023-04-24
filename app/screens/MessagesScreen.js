@@ -1,6 +1,5 @@
 import React from "react";
 import { FlatList, SafeAreaView, View } from "react-native";
-import { TapGestureHandler, RotationGestureHandler } from 'react-native-gesture-handler';
 
 
 import ListItem from "../components/ListItem";
@@ -39,6 +38,10 @@ function MessagesScreen(props) {
             doctorType={item.description}
             image={item.image}
             onPress={() => console.log("Message selected", item)}
+            renderRightActions={() => <View style={{
+                backgroundColor: "red",
+                width: 70
+            }} />}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}

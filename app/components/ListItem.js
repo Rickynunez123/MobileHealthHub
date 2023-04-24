@@ -1,27 +1,29 @@
 import React from "react";
 import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
+import { Swipeable } from "react-native-gesture-handler";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-//List item is the same as card2 but without the stars and the margin 
+//List item is the same as card2 but without the stars and the margin
 
-function ListItem({ name, doctorType, image, onPress }) {
+function ListItem({ name, doctorType, image, onPress, renderRightActions }) {
   return (
-    <TouchableHighlight 
-    style={styles.card} 
-    onPress={onPress}
-    underlayColor={colors.ultraLightGray}
-    >
-    <View style={styles.container}>
-      <Image style={styles.image} source={image} />
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.name}>{name}</AppText>
-        <AppText style={styles.doctorType}>{doctorType}</AppText>
-      </View>
-    </View>
-    </TouchableHighlight>
-
+    <Swipeable renderRightActions={renderRightActions}>
+      <TouchableHighlight
+        style={styles.card}
+        onPress={onPress}
+        underlayColor={colors.ultraLightGray}
+      >
+        <View style={styles.container}>
+          <Image style={styles.image} source={image} />
+          <View style={styles.detailsContainer}>
+            <AppText style={styles.name}>{name}</AppText>
+            <AppText style={styles.doctorType}>{doctorType}</AppText>
+          </View>
+        </View>
+      </TouchableHighlight>
+    </Swipeable>
   );
 }
 
