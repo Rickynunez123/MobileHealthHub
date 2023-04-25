@@ -7,7 +7,14 @@ import colors from "../config/colors";
 
 //List item is the same as card2 but without the stars and the margin
 
-function ListItem({ name, doctorType, image, onPress, renderRightActions }) {
+function ListItem({
+  title,
+  subTitle,
+  image,
+  onPress,
+  IconComponent,
+  renderRightActions,
+}) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight
@@ -16,10 +23,11 @@ function ListItem({ name, doctorType, image, onPress, renderRightActions }) {
         underlayColor={colors.ultraLightGray}
       >
         <View style={styles.container}>
-          <Image style={styles.image} source={image} />
+          {IconComponent}
+          {image && <Image style={styles.image} source={image} />}
           <View style={styles.detailsContainer}>
-            <AppText style={styles.name}>{name}</AppText>
-            <AppText style={styles.doctorType}>{doctorType}</AppText>
+            <AppText style={styles.title}>{title}</AppText>
+            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
         </View>
       </TouchableHighlight>
@@ -29,26 +37,27 @@ function ListItem({ name, doctorType, image, onPress, renderRightActions }) {
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 15,
     backgroundColor: colors.white,
-    marginBottom: 10,
     padding: 15,
     overflow: "hidden",
+  },
+  detailsContainer:{
+    marginLeft: 10,
+    justifyContent: "center"
   },
   image: {
     width: 60,
     height: 60,
     borderRadius: 35,
-    marginRight: 20,
   },
   container: {
     flexDirection: "row",
   },
-  name: {
-    marginBottom: 10,
+  title: {
+    marginBottom: 5,
     fontWeight: "600",
   },
-  doctorType: {
+  subTitle: {
     color: colors.gray2,
     fontSize: "13",
     fontWeight: "400",

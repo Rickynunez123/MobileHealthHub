@@ -10,10 +10,23 @@ import Card2 from "./app/components/Card2";
 import MessagesScreen from "./app/screens/MessagesScreen";
 
 import DoctorDetailsScreen from "./app/screens/DoctorDetailsScreen";
+import Icon from "./app/components/Icon";
+import ListItem from "./app/components/ListItem";
+import AccountScreen from "./app/screens/AccountScreen";
 
 export default function App() {
-  return <MessagesScreen />;
-}
+  return(
+    <View
+  style={{
+    // backgroundColor: "",
+  }} >
+
+    <AccountScreen />
+
+</View>
+
+
+  )}
 
 // <View
 //   style={{
@@ -28,3 +41,10 @@ export default function App() {
 //     image={require("./app/assets/doctorImages/dr1.jpeg")}
 //   ></Card2>
 // </View>
+
+
+// <ListItem 
+// title="My title"
+// subTitle="My subtitle"
+// ImageComponent={<Icon name="email"/>}
+// />
