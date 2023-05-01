@@ -7,6 +7,11 @@ export default {
   ultraLightGray: "#f8f4f4",
   lightGray: "#D3D3D3",
   gold: "#ffd700",
-  dnager: '#ff5252'
+  danger: '#ff5252',
+  green: '#56887d',
+  blue: "#3e5967",
+  orange: "#cd9342",
+  dark: "0c0c0c"
+
 
 };

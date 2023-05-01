@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, View, FlatList } from "react-native";
-import ListItem from "../components/ListItem";
 
+import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
 import ListItemSeparator from "../components/ListItemSeparator";
@@ -11,14 +11,14 @@ const menuItems = [
     title: "My Listing",
     icon: {
       name: "format-list-bulleted",
-      backgroundColor: colors.gray,
+      backgroundColor: colors.green,
     },
   },
   {
     title: "My Messages",
     icon: {
       name: "email",
-      backgroundColor: colors.gray,
+      backgroundColor: colors.blue,
     },
   },
 ];
@@ -53,7 +53,7 @@ function AccountScreen(props) {
       </View>
       <ListItem
         title="Log Out"
-        IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+        IconComponent={<Icon name="logout" backgroundColor={colors.danger} />}
       />
     </SafeAreaView>
   );
@@ -63,7 +63,10 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
   },
-  screen: {},
+  screen: {
+    backgroundColor: colors.ultraLightGray,
+    height: "100%"
+  },
 });
 
 export default AccountScreen;
