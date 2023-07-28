@@ -2,7 +2,10 @@ import React from "react";
 import { View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+
+// This will display the icon with specific 
 function Icon({
+  // Props 
   name,
   size = 40,
   backgroundColor = "#000",

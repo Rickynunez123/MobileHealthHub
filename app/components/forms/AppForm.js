@@ -10,10 +10,8 @@ function AppForm({ initialValues, onSubmit, validationSchema, children }) {
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      {() => (
-        // We add the fragment and inside the fragment we are going to render our children
-        <>{children}</>
-      )}
+      {/* We add the fragment and inside the fragment we are going to render our children */}
+      {() => (<>{children}</>)}
     </Formik>
   );
 }

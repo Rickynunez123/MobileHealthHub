@@ -28,6 +28,7 @@ import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
+import CategoryPickerItem from "./app/components/CategoryPickerItem";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -36,7 +37,7 @@ const categories = [
 ];
 
 export default function App() {
-  const [category, setCategory] = useState(categories[0]);
+  const [category, setCategory] = useState();
 
   return (
     <View
@@ -45,14 +46,16 @@ export default function App() {
         paddingTop: 100,
       }}
     >
-      {/* <ListingEditScreen></ListingEditScreen> */}
-      <AppPicker
+      <ListingEditScreen />
+      {/* <AppPicker
+        // This is the item that will be displayed, and we are getting it as a prop 
         selectedItem={category}
+        // Event that the component raises when the user selects an item
         onSelectItem={(item) => setCategory(item)}
         items={categories}
         icon="apps"
         placeholder="helo"
-      />
+      /> */}
     </View>
   );
 }
