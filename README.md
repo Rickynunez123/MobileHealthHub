@@ -1,2 +1,2 @@
 # MobileHealthHub
-Allows you to conveniently store and manage all your personal health information and schedule visits with your prefer doctor
+Allows you to conveniently store and manage all your personal health information and schedule visits with your preferred doctor
